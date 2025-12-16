@@ -83,7 +83,7 @@ h1 {
 .title {
   color: #fff;
   font-size: 2em;
-  margin-bottom: 1rem;
+  margin: 1em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -116,8 +116,7 @@ body {
 
 .scoreBoard {
   color: #fff;
-  background: rgba(47, 47, 47, 0.9);
-  border: solid 2px #667eea;
+  border: solid 2px #ffffff;
   border-radius: 8px;
   width: min(90vw, 560px);
   padding: 12px;
@@ -136,7 +135,7 @@ body {
 
 .scoreBoard h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
-  color: #667eea;
+  color: #ffffff;
   margin: 0;
   font-weight: 700;
 }
@@ -155,12 +154,12 @@ body {
 }
 
 .baby {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #1e1e1e;
   color: white;
   font-size: clamp(1.2em, 4vw, 2.5em);
   font-weight: bold;
   padding: clamp(15px, 4vw, 40px) clamp(30px, 8vw, 80px);
-  border: none;
+  border: solid 2px #fff;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -176,7 +175,6 @@ body {
 @media (hover: hover) {
   .baby:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
   }
 }
 
