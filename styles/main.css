@@ -12,6 +12,9 @@
   color: #85796b;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
 }
+.grid:nth-child(35){
+  border-radius: 100%;
+}
 
 .grid div {
   width: 100%;
@@ -33,6 +36,7 @@
 
 .grid div:hover{
   cursor: crosshair;
+
 }
 
 @media (hover: none) {

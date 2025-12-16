@@ -18,7 +18,6 @@ function candyCrushGame() {
 
     const candyColors = [
         "url(assets/bharat.jpg)",
-        "url(assets/face.png)",
         "url(assets/lal.png)",
         "url(assets/lalu.jpg)",
         "url(assets/mohanlal.png)",
@@ -30,12 +29,11 @@ function candyCrushGame() {
     // Audio files for each candy type
     const candySounds = {
         0: "audio/bharat.m4a",
-        1: "audio/face.m4a",
-        2: "audio/lal.m4a",
-        3: "audio/lalu.m4a",
-        4: "audio/mohanlal.m4a",
-        5: "audio/raju.m4a",
-        6: "audio/thangan.m4a",
+        1: "audio/lal.m4a",
+        2: "audio/lalu.m4a",
+        3: "audio/mohanlal.m4a",
+        4: "audio/raju.m4a",
+        5: "audio/thangan.m4a",
     };
 
     // Play match sound effect with candy-specific audio file
