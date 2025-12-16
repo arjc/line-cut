@@ -10,10 +10,8 @@
   padding: 4px;
   gap: 0;
   color: #85796b;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
-}
-.grid:nth-child(35){
-  border-radius: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+  border-radius: 5px;
 }
 
 .grid div {
@@ -29,12 +27,12 @@
   -webkit-touch-callout: none;
 }
 
-.grid div:active{
+.grid div:active {
   box-sizing: border-box;
   border: solid 2px #0f0;
 }
 
-.grid div:hover{
+.grid div:hover {
   cursor: crosshair;
 
 }
@@ -46,12 +44,10 @@
 }
 
 h3 {
-  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 }
 
 h1 {
-  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   margin-top: -10px;
 }
@@ -61,15 +57,20 @@ h1 {
 }
 
 @keyframes flicker {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   25% {
     opacity: 0.3;
   }
+
   50% {
     opacity: 1;
   }
+
   75% {
     opacity: 0.3;
   }
@@ -79,15 +80,24 @@ h1 {
   animation: flicker 0.6s ease-in-out;
 }
 
+.title {
+  color: #fff;
+  font-size: 2em;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -98,10 +108,10 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  font-family: "Montserrat", sans-serif;
   padding: 8px;
   gap: 8px;
   overflow-x: hidden;
+  font-family: monospace;
 }
 
 .scoreBoard {
@@ -147,7 +157,6 @@ body {
 .baby {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  font-family: "Montserrat", sans-serif;
   font-size: clamp(1.2em, 4vw, 2.5em);
   font-weight: bold;
   padding: clamp(15px, 4vw, 40px) clamp(30px, 8vw, 80px);
@@ -181,15 +190,15 @@ body {
     padding: 6px;
     gap: 6px;
   }
-  
+
   .grid {
     margin: 0;
   }
-  
+
   .scoreBoard {
     padding: 10px;
   }
-  
+
   .start {
     z-index: 9999;
   }
@@ -205,7 +214,7 @@ body {
   .scoreBoard {
     padding: 8px;
   }
-  
+
   .grid {
     margin: 4px auto;
   }
