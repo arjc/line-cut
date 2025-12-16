@@ -1,0 +1,208 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: min(90vw, 560px);
+  height: min(90vw, 560px);
+  aspect-ratio: 1;
+  margin: 10px auto;
+  background-color: rgba(109, 127, 151, 0.5);
+  padding: 4px;
+  gap: 0;
+  color: #85796b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset, 0 1px 0 #fff;
+}
+
+.grid div {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  box-sizing: border-box;
+  border: solid 1px #000;
+  background-size: cover;
+  background-position: center;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.grid div:active{
+  box-sizing: border-box;
+  border: solid 2px #0f0;
+}
+
+.grid div:hover{
+  cursor: crosshair;
+}
+
+@media (hover: none) {
+  .grid div:hover {
+    cursor: pointer;
+  }
+}
+
+h3 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  margin-top: -10px;
+}
+
+.invisible {
+  background-color: white;
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.3;
+  }
+}
+
+.matched {
+  animation: flicker 0.6s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Montserrat", sans-serif;
+  padding: 8px;
+  gap: 8px;
+  overflow-x: hidden;
+}
+
+.scoreBoard {
+  color: #fff;
+  background: rgba(47, 47, 47, 0.9);
+  border: solid 2px #667eea;
+  border-radius: 8px;
+  width: min(90vw, 560px);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.scoreBoard h3 {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+.scoreBoard h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: #667eea;
+  margin: 0;
+  font-weight: 700;
+}
+
+.start {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.baby {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.2em, 4vw, 2.5em);
+  font-weight: bold;
+  padding: clamp(15px, 4vw, 40px) clamp(30px, 8vw, 80px);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (hover: hover) {
+  .baby:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+  }
+}
+
+.baby:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 6px;
+    gap: 6px;
+  }
+  
+  .grid {
+    margin: 0;
+  }
+  
+  .scoreBoard {
+    padding: 10px;
+  }
+  
+  .start {
+    z-index: 9999;
+  }
+}
+
+@media (max-height: 600px) {
+  body {
+    justify-content: center;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .scoreBoard {
+    padding: 8px;
+  }
+  
+  .grid {
+    margin: 4px auto;
+  }
+}
