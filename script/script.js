@@ -260,7 +260,7 @@ function candyCrushGame() {
 
     //For Row of Four
     function checkRowForFour() {
-        for (i = 0; i < 60; i++) {
+        for (i = 0; i < 61; i++) {
             let rowOfFour = [i, i + 1, i + 2, i + 3];
             let decidedColor = squares[i].style.backgroundImage;
             const isBlank = squares[i].style.backgroundImage === "";
@@ -364,7 +364,7 @@ function candyCrushGame() {
 
     //For Row of Three
     function checkRowForThree() {
-        for (i = 0; i < 61; i++) {
+        for (i = 0; i < 62; i++) {
             let rowOfThree = [i, i + 1, i + 2];
             let decidedColor = squares[i].style.backgroundImage;
             const isBlank = squares[i].style.backgroundImage === "";
@@ -460,7 +460,7 @@ function candyCrushGame() {
 
     //For Row of Five
     function checkRowForFive() {
-        for (i = 0; i < 59; i++) {
+        for (i = 0; i < 60; i++) {
             let rowOfFive = [i, i + 1, i + 2, i + 3, i + 4];
             let decidedColor = squares[i].style.backgroundImage;
             const isBlank = squares[i].style.backgroundImage === "";
