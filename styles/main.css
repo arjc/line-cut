@@ -100,7 +100,6 @@ h1 {
   box-sizing: border-box;
 }
 
-html {background: cyan;}
 
 html,
 body {
@@ -113,7 +112,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 8px;
   gap: 8px;
   overflow-x: hidden;
   font-family: monospace;
@@ -222,4 +220,20 @@ body {
   .grid {
     margin: 4px auto;
   }
+}
+
+.footer {
+  width: 100%;
+  background: #ffffff88;
+  color: #000;
+  text-align: center;
+  padding: 15px;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  border-top: 2px solid #000;
+  margin-top: auto;
+}
+
+.footer p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
