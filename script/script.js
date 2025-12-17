@@ -16,26 +16,6 @@ function candyCrushGame() {
     const squares = [];
     let score = 0;
 
-    const candyColors = [
-        "url(assets/bharat.jpg)",
-        "url(assets/lal.png)",
-        "url(assets/lalu.jpg)",
-        "url(assets/mohanlal.png)",
-        "url(assets/raju.jpg)",
-        "url(assets/thangan.png)",
-
-    ];
-
-    // Audio files for each candy type
-    const candySounds = {
-        0: "audio/bharat.m4a",
-        1: "audio/lal.m4a",
-        2: "audio/lalu.m4a",
-        3: "audio/mohanlal.mp3",
-        4: "audio/raju.mp3",
-        5: "audio/thangan.m4a",
-    };
-
     // Play match sound effect with candy-specific audio file
     function playMatchSound(colorIndex) {
         try {
