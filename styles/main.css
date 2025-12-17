@@ -125,30 +125,39 @@ body {
   width: min(90vw, 560px);
   padding: 12px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  gap: 20px;
 }
 
-.scoreBoard h3 {
+.score-container,
+.timer-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+}
+
+.score-container h3,
+.timer-container h3 {
   font-size: clamp(0.8rem, 2vw, 1.2rem);
-  margin-bottom: 4px;
+  margin: 0 0 4px 0;
   font-weight: 400;
 }
 
-.scoreBoard h1 {
+.score-container p,
+.timer-container p {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
-  color: #000;
   margin: 0;
   font-weight: 700;
 }
 
+#score {
+  color: #000;
+}
+
 .timer-container {
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 2px solid #000;
-  width: 100%;
+  text-align: center;
 }
 
 .timer-container h3 {
