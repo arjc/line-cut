@@ -31,8 +31,8 @@ function candyCrushGame() {
         0: "audio/bharat.m4a",
         1: "audio/lal.m4a",
         2: "audio/lalu.m4a",
-        3: "audio/mohanlal.m4a",
-        4: "audio/raju.m4a",
+        3: "audio/mohanlal.mp3",
+        4: "audio/raju.mp3",
         5: "audio/thangan.m4a",
     };
 
