@@ -33,6 +33,9 @@ function candyCrushGame() {
 
     // Track matched elements to prevent duplicate deletions
     const matchedElements = new Set();
+    
+    // Track if game is busy (elements are animating)
+    let isGameBusy = false;
 
     // Creating Game Board
     function createBoard() {
@@ -83,6 +86,7 @@ function candyCrushGame() {
     );
 
     function dragStart() {
+        if (isGameBusy) return;
         colorBeingDragged = this.style.backgroundImage;
         colorIndexBeingDragged = parseInt(this.getAttribute("data-color"));
         squareIdBeingDragged = parseInt(this.id);
@@ -90,18 +94,22 @@ function candyCrushGame() {
     }
 
     function dragOver(e) {
+        if (isGameBusy) return;
         e.preventDefault();
     }
 
     function dragEnter(e) {
+        if (isGameBusy) return;
         e.preventDefault();
     }
 
     function dragLeave() {
+        if (isGameBusy) return;
         this.style.backgroundImage = "";
     }
 
     function dragDrop() {
+        if (isGameBusy) return;
         colorBeingReplaced = this.style.backgroundImage;
         colorIndexBeingReplaced = parseInt(this.getAttribute("data-color"));
         squareIdBeingReplaced = parseInt(this.id);
@@ -114,6 +122,7 @@ function candyCrushGame() {
     }
 
     function dragEnd() {
+        if (isGameBusy) return;
         //Defining, What is a valid move?
         let validMoves = [
             squareIdBeingDragged - 1,
@@ -144,6 +153,7 @@ function candyCrushGame() {
     let touchStartY = 0;
 
     function touchStart(e) {
+        if (isGameBusy) return;
         touchStartId = parseInt(this.id);
         const touch = e.touches[0];
         touchStartX = touch.clientX;
@@ -154,11 +164,12 @@ function candyCrushGame() {
     }
 
     function touchMove(e) {
+        if (isGameBusy) return;
         e.preventDefault();
     }
 
     function touchEnd(e) {
-        if (touchStartId === null) return;
+        if (isGameBusy || touchStartId === null) return;
         
         const touch = e.changedTouches[0];
         const touchEndX = touch.clientX;
@@ -292,6 +303,7 @@ function candyCrushGame() {
                 // Check if any element is already matched
                 if (rowOfFour.some(index => matchedElements.has(index))) continue;
 
+                isGameBusy = true;
                 score += 4;
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
@@ -306,6 +318,7 @@ function candyCrushGame() {
                         squares[index].classList.remove("matched");
                         matchedElements.delete(index);
                     });
+                    isGameBusy = false;
                 }, 600);
             }
         }
@@ -328,6 +341,7 @@ function candyCrushGame() {
                 // Check if any element is already matched
                 if (columnOfFour.some(index => matchedElements.has(index))) continue;
 
+                isGameBusy = true;
                 score += 4;
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
@@ -342,6 +356,7 @@ function candyCrushGame() {
                         squares[index].classList.remove("matched");
                         matchedElements.delete(index);
                     });
+                    isGameBusy = false;
                 }, 600);
             }
         }
@@ -384,6 +399,7 @@ function candyCrushGame() {
                 // Check if any element is already matched
                 if (rowOfThree.some(index => matchedElements.has(index))) continue;
 
+                isGameBusy = true;
                 score += 3;
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
@@ -398,6 +414,7 @@ function candyCrushGame() {
                         squares[index].classList.remove("matched");
                         matchedElements.delete(index);
                     });
+                    isGameBusy = false;
                 }, 600);
             }
         }
@@ -420,6 +437,7 @@ function candyCrushGame() {
                 // Check if any element is already matched
                 if (columnOfThree.some(index => matchedElements.has(index))) continue;
 
+                isGameBusy = true;
                 score += 3;
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
@@ -434,6 +452,7 @@ function candyCrushGame() {
                         squares[index].classList.remove("matched");
                         matchedElements.delete(index);
                     });
+                    isGameBusy = false;
                 }, 600);
             }
         }
@@ -492,6 +511,7 @@ function candyCrushGame() {
                 // Check if any element is already matched
                 if (rowOfFive.some(index => matchedElements.has(index))) continue;
 
+                isGameBusy = true;
                 score += 5;
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
@@ -506,6 +526,7 @@ function candyCrushGame() {
                         squares[index].classList.remove("matched");
                         matchedElements.delete(index);
                     });
+                    isGameBusy = false;
                 }, 600);
             }
         }
@@ -528,6 +549,7 @@ function candyCrushGame() {
                 // Check if any element is already matched
                 if (columnOfFive.some(index => matchedElements.has(index))) continue;
 
+                isGameBusy = true;
                 score += 5;
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
@@ -542,6 +564,7 @@ function candyCrushGame() {
                         squares[index].classList.remove("matched");
                         matchedElements.delete(index);
                     });
+                    isGameBusy = false;
                 }, 600);
             }
         }
