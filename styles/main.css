@@ -81,7 +81,11 @@ h1 {
 }
 
 .title {
-  color: #fff;
+  background: #fff;
+  border: solid 5px #000;
+  padding: 15px;
+  border-radius: 25px;
+  color: #000;
   font-size: 2em;
   margin: 1em;
   display: flex;
@@ -114,8 +118,9 @@ body {
 }
 
 .scoreBoard {
-  color: #fff;
-  border: solid 2px #ffffff;
+  color: #000;
+  border: solid 2px #000;
+  background: #fff;
   border-radius: 8px;
   width: min(90vw, 560px);
   padding: 12px;
@@ -134,7 +139,7 @@ body {
 
 .scoreBoard h1 {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
-  color: #ffffff;
+  color: #000;
   margin: 0;
   font-weight: 700;
 }
