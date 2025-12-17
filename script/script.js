@@ -12,9 +12,13 @@ function jibesh() {
 function candyCrushGame() {
     const grid = document.querySelector(".grid");
     const scoreDisplay = document.getElementById("score");
+    const timerDisplay = document.getElementById("timer");
     const width = 8;
     const squares = [];
     let score = 0;
+    let timeRemaining = 60;
+    let timerInterval = null;
+    let gameActive = true;
 
     // Play match sound effect with candy-specific audio file
     function playMatchSound(colorIndex) {
@@ -37,6 +41,62 @@ function candyCrushGame() {
     // Track if game is busy (elements are animating)
     let isGameBusy = false;
 
+    // Timer function
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            timeRemaining--;
+            timerDisplay.textContent = timeRemaining;
+
+            // Add warning animation when time is low
+            if (timeRemaining <= 10) {
+                timerDisplay.classList.add("time-warning");
+            } else {
+                timerDisplay.classList.remove("time-warning");
+            }
+
+            // Timer reached 0
+            if (timeRemaining <= 0) {
+                clearInterval(timerInterval);
+                gameActive = false;
+                isGameBusy = true;
+                
+                // Show final score alert
+                const finalScore = score;
+                alert(`Game Over!\nFinal Score: ${finalScore}`);
+                
+                // Reload the page
+                location.reload();
+            }
+        }, 1000);
+    }
+
+    function resetGame() {
+        // Reset timer and score
+        timeRemaining = 60;
+        score = 0;
+        scoreDisplay.innerHTML = score;
+        timerDisplay.textContent = timeRemaining;
+        timerDisplay.classList.remove("time-warning");
+        
+        // Clear matched elements
+        matchedElements.clear();
+        squares.forEach(sq => {
+            sq.classList.remove("matched");
+        });
+        
+        // Reset game state
+        gameActive = true;
+        isGameBusy = false;
+        
+        // Recreate board
+        grid.innerHTML = "";
+        squares.length = 0;
+        createBoard();
+        
+        // Restart timer
+        startTimer();
+    }
+
     // Creating Game Board
     function createBoard() {
         for (let i = 0; i < width * width; i++) {
@@ -52,6 +112,9 @@ function candyCrushGame() {
         }
     }
     createBoard();
+    
+    // Start the timer
+    startTimer();
 
     // Dragging the Candy
     let colorBeingDragged;
@@ -86,7 +149,7 @@ function candyCrushGame() {
     );
 
     function dragStart() {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         colorBeingDragged = this.style.backgroundImage;
         colorIndexBeingDragged = parseInt(this.getAttribute("data-color"));
         squareIdBeingDragged = parseInt(this.id);
@@ -94,22 +157,22 @@ function candyCrushGame() {
     }
 
     function dragOver(e) {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         e.preventDefault();
     }
 
     function dragEnter(e) {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         e.preventDefault();
     }
 
     function dragLeave() {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         this.style.backgroundImage = "";
     }
 
     function dragDrop() {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         colorBeingReplaced = this.style.backgroundImage;
         colorIndexBeingReplaced = parseInt(this.getAttribute("data-color"));
         squareIdBeingReplaced = parseInt(this.id);
@@ -122,7 +185,7 @@ function candyCrushGame() {
     }
 
     function dragEnd() {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         //Defining, What is a valid move?
         let validMoves = [
             squareIdBeingDragged - 1,
@@ -153,7 +216,7 @@ function candyCrushGame() {
     let touchStartY = 0;
 
     function touchStart(e) {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         touchStartId = parseInt(this.id);
         const touch = e.touches[0];
         touchStartX = touch.clientX;
@@ -164,12 +227,12 @@ function candyCrushGame() {
     }
 
     function touchMove(e) {
-        if (isGameBusy) return;
+        if (isGameBusy || !gameActive) return;
         e.preventDefault();
     }
 
     function touchEnd(e) {
-        if (isGameBusy || touchStartId === null) return;
+        if (isGameBusy || !gameActive || touchStartId === null) return;
         
         const touch = e.changedTouches[0];
         const touchEndX = touch.clientX;

@@ -144,6 +144,40 @@ body {
   font-weight: 700;
 }
 
+.timer-container {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 2px solid #000;
+  width: 100%;
+}
+
+.timer-container h3 {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  margin-bottom: 4px;
+  font-weight: 400;
+}
+
+#timer {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  color: #ff6b6b;
+  margin: 0;
+  font-weight: 700;
+}
+
+#timer.time-warning {
+  color: #ff6b6b;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 .start {
   position: fixed;
   top: 0;
