@@ -98,7 +98,7 @@ function candyCrushGame() {
                     var scoreMsg = "⭐ Convincing Suresh ⭐";
                 }
                 else if (score <= 105) {
-                    var scoreMsg = "⭐⭐ STYLEN SURA ⭐⭐";
+                    var scoreMsg = "⭐⭐ STYLEN RAJU ⭐⭐";
                 }
                 else if (score <= 115) {
                     var scoreMsg = "⭐⭐⭐ KOZHIKKODAN MOGGER ⭐⭐⭐";
