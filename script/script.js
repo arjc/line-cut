@@ -37,7 +37,7 @@ function candyCrushGame() {
 
     // Track matched elements to prevent duplicate deletions
     const matchedElements = new Set();
-    
+
     // Track if game is busy (elements are animating)
     let isGameBusy = false;
 
@@ -59,11 +59,55 @@ function candyCrushGame() {
                 clearInterval(timerInterval);
                 gameActive = false;
                 isGameBusy = true;
-                
                 // Show final score alert
                 const finalScore = score;
-                alert(`Game Over!\nFinal Score: ${finalScore}`);
+                if (score <= 15) {
+                    var scoreMsg = "Kochukundan";
+                    playMatchSound(3);
+                }
+                else if (score <= 25) {
+                    var scoreMsg = "Philipinte Pari";
+                    playMatchSound(4);
+                }
+                else if (score <= 35) {
+                    var scoreMsg = "Pandi Karimpara Polayadi";
+                    playMatchSound(2);
+                }
+                else if (score <= 45) {
+                    var scoreMsg = "Polaydimon";
+                    playMatchSound(0);
+                }
+                else if (score <= 55) {
+                    var scoreMsg = "Panna poori mon";
+                    playMatchSound(5);
+                }
+                else if (score <= 65) {
+                    var scoreMsg = "Duplicate Indian Kazhuvarudamon";
+                }
+                else if (score <= 75) {
+                    var scoreMsg = "Rajumon Puthiyamugauu";
+                }
+                else if (score <= 85) {
+                    var scoreMsg = "Moggerlal";
+                }
+                else if (score <= 95) {
+                    var scoreMsg = "Convincing Suresh";
+                }
+                else if (score <= 105) {
+                    var scoreMsg = "Sexy Ashokan";
+                }
+                else if (score <= 115) {
+                    var scoreMsg = "Kozhikodan Mogger";
+                }
+                else if (score <= 125) {
+                    var scoreMsg = "⭐Jaaran Jibesh⭐ (top 1%)";
+                }
+                else {
+                    var scoreMsg = "Kundan Pro Max";
+                }
                 
+                alert(`Game Over!\nFinal Score: ${finalScore}.\n You are ${scoreMsg}`);
+
                 // Reload the page
                 location.reload();
             }
@@ -77,22 +121,22 @@ function candyCrushGame() {
         scoreDisplay.innerHTML = score;
         timerDisplay.textContent = timeRemaining;
         timerDisplay.classList.remove("time-warning");
-        
+
         // Clear matched elements
         matchedElements.clear();
         squares.forEach(sq => {
             sq.classList.remove("matched");
         });
-        
+
         // Reset game state
         gameActive = true;
         isGameBusy = false;
-        
+
         // Recreate board
         grid.innerHTML = "";
         squares.length = 0;
         createBoard();
-        
+
         // Restart timer
         startTimer();
     }
@@ -112,7 +156,7 @@ function candyCrushGame() {
         }
     }
     createBoard();
-    
+
     // Start the timer
     startTimer();
 
@@ -136,15 +180,15 @@ function candyCrushGame() {
         square.addEventListener("drageleave", dragLeave)
     );
     squares.forEach((square) => square.addEventListener("drop", dragDrop));
-    
+
     // Touch support for mobile
-    squares.forEach((square) => 
+    squares.forEach((square) =>
         square.addEventListener("touchstart", touchStart)
     );
-    squares.forEach((square) => 
+    squares.forEach((square) =>
         square.addEventListener("touchend", touchEnd)
     );
-    squares.forEach((square) => 
+    squares.forEach((square) =>
         square.addEventListener("touchmove", touchMove)
     );
 
@@ -233,7 +277,7 @@ function candyCrushGame() {
 
     function touchEnd(e) {
         if (isGameBusy || !gameActive || touchStartId === null) return;
-        
+
         const touch = e.changedTouches[0];
         const touchEndX = touch.clientX;
         const touchEndY = touch.clientY;
@@ -641,5 +685,5 @@ function candyCrushGame() {
         checkRowForThree();
         checkColumnForThree();
         moveIntoSquareBelow();
-    }, 500);
+    }, 250);
 }
