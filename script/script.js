@@ -70,7 +70,7 @@ function candyCrushGame() {
                     playMatchSound(3);
                 }
                 else if (score <= 25) {
-                    var scoreMsg = "Philipinte Pari";
+                    var scoreMsg = "Kochukundan";
                     playMatchSound(4);
                 }
                 else if (score <= 35) {
@@ -82,32 +82,32 @@ function candyCrushGame() {
                     playMatchSound(0);
                 }
                 else if (score <= 55) {
-                    var scoreMsg = "Panna poori mon";
+                    var scoreMsg = "Nayinte patti mon";
                     playMatchSound(5);
                 }
                 else if (score <= 65) {
                     var scoreMsg = "Duplicate Indian Kazhuvarudamon";
                 }
                 else if (score <= 75) {
-                    var scoreMsg = "Rajumon Puthiyamugauu";
+                    var scoreMsg = "Rajumon Puthiyamugauu *";
                 }
                 else if (score <= 85) {
-                    var scoreMsg = "Moggerlal";
+                    var scoreMsg = "Moggerlal ⭐";
                 }
                 else if (score <= 95) {
-                    var scoreMsg = "Convincing Suresh";
+                    var scoreMsg = "⭐ Convincing Suresh ⭐";
                 }
                 else if (score <= 105) {
-                    var scoreMsg = "Sexy Ashokan";
+                    var scoreMsg = "⭐⭐ STYLEN SURA ⭐⭐";
                 }
                 else if (score <= 115) {
-                    var scoreMsg = "Kozhikodan Mogger";
+                    var scoreMsg = "⭐⭐⭐ KOZHIKKODAN MOGGER ⭐⭐⭐";
                 }
                 else if (score <= 125) {
-                    var scoreMsg = "⭐Jaaran Jibesh⭐ (top 1%)";
+                    var scoreMsg = "⭐⭐⭐⭐ JAAARAN JIMBRUTTAN ⭐⭐⭐⭐ (top 1%)";
                 }
                 else {
-                    var scoreMsg = "UNEMPLOYED UUMBAN (POI PANI NOKK MYRE)";
+                    var scoreMsg = "⭐⭐⭐⭐⭐ UNEMPLOYED UUMBAN ⭐⭐⭐⭐⭐ (POI PANI NOKK MYRE)";
                 }
                 
                 alert(`Game Over!\nFinal Score: ${finalScore}.\n You are ${scoreMsg}`);
