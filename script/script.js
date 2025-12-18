@@ -61,8 +61,12 @@ function candyCrushGame() {
                 isGameBusy = true;
                 // Show final score alert
                 const finalScore = score;
+                if (score <= 5) {
+                    var scoreMsg = "Andi pongathon";
+                    playMatchSound(3);
+                }
                 if (score <= 15) {
-                    var scoreMsg = "Kochukundan";
+                    var scoreMsg = "Kundan";
                     playMatchSound(3);
                 }
                 else if (score <= 25) {
@@ -103,7 +107,7 @@ function candyCrushGame() {
                     var scoreMsg = "⭐Jaaran Jibesh⭐ (top 1%)";
                 }
                 else {
-                    var scoreMsg = "Kundan Pro Max";
+                    var scoreMsg = "UNEMPLOYED UUMBAN (POI PANI NOKK MYRE)";
                 }
                 
                 alert(`Game Over!\nFinal Score: ${finalScore}.\n You are ${scoreMsg}`);
