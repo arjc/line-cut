@@ -41,7 +41,7 @@ function suraSugarBlast() {
         }
         if (typeof themeRank !== 'undefined' && themeRank) {
             const scoreData = themeRank.find(s => score <= s.max);
-            return `Your score: ${score} [best: ${highScore}]\nWhich suggests that you are\n${scoreData?.msg}`;
+            return `=Your score: ${score} [best: ${highScore}]=\n---Which suggests that you are...\n---${scoreData?.msg}`;
         }
         return `Score: ${score}`;
     }

@@ -6,54 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Line cut - Match 3</title>
     <link rel="stylesheet" href="styles/main.css">
-    <style>
-        body {
-            color: #fff;
-            padding: 0;
-        }
-
-        .jombesh {
-            font-size: 50px;
-        }
-
-        .jibesh-card {
-            background: #000000;
-            cursor: pointer;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
-            max-width: 90vw;
-            margin: 6px;
-        }
-
-        .jibesh-card img {
-            width: 175px;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .jibesh-card div {
-            margin: 50px 25px;
-        }
-
-        .jibesh-card h1 {
-            font-size: clamp(1rem, 1.5vw, 2.5rem);
-
-        }
-    </style>
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 
-<body
-    style="background-color: #000000; background-image: linear-gradient(0deg, #ffffff89 1px, transparent 1px), linear-gradient(90deg, #ffffff89 1px, transparent 1px); background-size: 50px 50px;">
+<body>
 
-    <div style="background: #000000a8; padding: 10px; font-size: 75px; width: 75vw; margin: 10px;">
+    <div class="header-title">
         LINE CUT LINE CUT!!!
-        <p style="font-size: 0.3em;">(A match 3 game)</p>
+        <p>(A match 3 game)</p>
     </div>
     <!-- <h1 onclick="window.open('https://forms.gle/3Z3QJ1XwNyZouumQ6')">NEW LINE CUT +</h1> -->
-    <div
-    style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-evenly; margin: 10vh; gap: 5vh 0;">
+    <div class="cards-container">
         <div class="jibesh-card" onclick="window.location = 'malayalam2'">
             <img src="malayalam2/bg.gif" alt="six twenty">
             <div>
@@ -70,7 +33,7 @@
             </div>
         </div>
         <div class="jibesh-card not-available">
-            <img src="influencer/bg.gif" alt="">
+            <img src="mpop/bg.gif" alt="">
             <div>
                 <h1>🔞Malayalam influencers</h1>
                 <i>(മ - strong language)</i>
@@ -115,19 +78,19 @@
         </div>
         
     </div>
-    <div style="background: #331f0088; padding: 10px; font-size: 35px; width: 90vw; margin: 10px;">
+    <div class="disclaimer">
         ⚠ DISCLAIMER ⚠
-        <p style="font-size: 15px; margin: 5px 0;">
+        <p>
             This game is created entirely for fun. Nothing personal just 4 a rasam and stress relief.
             If you think this game violates certain policies or privacy, or is against your view please draft an email:
             <a href="mailto:dev.arjcwo@gmail.com">dev.arjcwo@gmail.com</a>
         </p>
     </div>
 
-    <div style="font-size: 1.2em; margin: 2.5em auto; background: #000000a8; padding: 50px; width: 90vw;">
-        <h1 style="color: #fff; margin-bottom: 0.75rem; font-size: 2.5em;">HOW TO PLAY?</h1>
-        <ul style="padding: 1ch;">
-            <li> <span style="font-size: 1.5em;">CONTROLS</span>
+    <div class="how-to-play">
+        <h1>HOW TO PLAY?</h1>
+        <ul>
+            <li> <span>CONTROLS</span>
                 <br>
                 [Mobile] Swipe the cells ⬆ ➡ ⬇ ⬅ with your finger to move
                 <br>

@@ -1,0 +1,92 @@
+body {
+    color: #fff;
+    padding: 0;
+    background-color: #000000;
+    background-image: linear-gradient(0deg, #ffffff89 1px, transparent 1px), linear-gradient(90deg, #ffffff89 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.jombesh {
+    font-size: 50px;
+}
+
+.jibesh-card {
+    background: #000000;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 90vw;
+    margin: 6px;
+}
+
+.jibesh-card img {
+    width: 175px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.jibesh-card div {
+    margin: 50px 25px;
+}
+
+.jibesh-card h1 {
+    font-size: clamp(1rem, 1.5vw, 2.5rem);
+}
+
+.header-title {
+    background: #000000a8;
+    padding: 10px;
+    font-size: 75px;
+    width: 75vw;
+    margin: 10px;
+}
+
+.header-title p {
+    font-size: 0.3em;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10vh;
+    gap: 5vh 0;
+}
+
+.disclaimer {
+    background: #331f0088;
+    padding: 10px;
+    font-size: 35px;
+    width: 90vw;
+    margin: 10px;
+}
+
+.disclaimer p {
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.how-to-play {
+    font-size: 1.2em;
+    margin: 2.5em auto;
+    background: #000000a8;
+    padding: 50px;
+    width: 90vw;
+}
+
+.how-to-play h1 {
+    color: #fff;
+    margin-bottom: 0.75rem;
+    font-size: 2.5em;
+}
+
+.how-to-play ul {
+    padding: 1ch;
+}
+
+.how-to-play span {
+    font-size: 1.5em;
+}
