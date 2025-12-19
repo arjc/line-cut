@@ -35,6 +35,13 @@ function candyCrushGame() {
         }
     }
 
+    // Trigger device vibration when a match is made
+    function triggerVibration() {
+        if (navigator.vibrate) {
+            navigator.vibrate(200); // Vibrate for 200 milliseconds
+        }
+    }
+
     // Track matched elements to prevent duplicate deletions
     const matchedElements = new Set();
 
@@ -419,6 +426,7 @@ function candyCrushGame() {
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
                 playMatchSound(colorIndex);
+                triggerVibration();
                 rowOfFour.forEach((index) => {
                     squares[index].classList.add("matched");
                     matchedElements.add(index);
@@ -457,6 +465,7 @@ function candyCrushGame() {
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
                 playMatchSound(colorIndex);
+                triggerVibration();
                 columnOfFour.forEach((index) => {
                     squares[index].classList.add("matched");
                     matchedElements.add(index);
@@ -515,6 +524,7 @@ function candyCrushGame() {
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
                 playMatchSound(colorIndex);
+                triggerVibration();
                 rowOfThree.forEach((index) => {
                     squares[index].classList.add("matched");
                     matchedElements.add(index);
@@ -553,6 +563,7 @@ function candyCrushGame() {
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
                 playMatchSound(colorIndex);
+                triggerVibration();
                 columnOfThree.forEach((index) => {
                     squares[index].classList.add("matched");
                     matchedElements.add(index);
@@ -627,6 +638,7 @@ function candyCrushGame() {
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
                 playMatchSound(colorIndex);
+                triggerVibration();
                 rowOfFive.forEach((index) => {
                     squares[index].classList.add("matched");
                     matchedElements.add(index);
@@ -665,6 +677,7 @@ function candyCrushGame() {
                 scoreDisplay.innerHTML = score;
                 const colorIndex = parseInt(squares[i].getAttribute("data-color"));
                 playMatchSound(colorIndex);
+                triggerVibration();
                 columnOfFive.forEach((index) => {
                     squares[index].classList.add("matched");
                     matchedElements.add(index);
