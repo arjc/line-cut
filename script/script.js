@@ -38,7 +38,7 @@ function candyCrushGame() {
     // Trigger device vibration when a match is made
     function triggerVibration() {
         if (navigator.vibrate) {
-            navigator.vibrate(200); // Vibrate for 200 milliseconds
+            navigator.vibrate(50); // Vibrate for 200 milliseconds
         }
     }
 
