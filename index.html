@@ -1,59 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Line cut Line cut!!!</title>
-  <link rel="stylesheet" href="styles/main.css">
-  <script src="script/script.js" charset="utf-8"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line cut - Match 3</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        .jombesh {
+            font-size: 50px;
+        }
+    </style>
 </head>
 
-<body style="background: url(bg.jpg) no-repeat; background-size: cover; background-position: center;">
-  <div class="start">
-    <button class="baby" onclick="jibesh()">Start</button>
-  </div>
-  <div class="title">
-    <h1>Line cut!!! (Match 3)</h1>
-    <p>(prototype)</p>
-  </div>
-  <div class="scoreBoard">
-    <div class="score-container">
-      <h3>score</h3>
-      <p id="score">0</p>
+<body style="background-color: #000000; background-image: linear-gradient(0deg, #ffffff89 1px, transparent 1px), linear-gradient(90deg, #ffffff89 1px, transparent 1px); background-size: 50px 50px;">
+    <div style="color: #fff;">
+
+        <div style="background: #000; padding: 1ch; font-size: 50px;">
+            LINE CUT LINE CUT!!!
+            <p style="font-size: 0.3em;">(Match 3 game)</p>
+        </div>
+        <div style="font-size: 1.5em; margin: 2.5em 5em; background: #000; padding: 1ch;">
+            <h1 style="color: #fff; margin-bottom: 0.75rem;">HOW TO PLAY?</h1>
+            <ul style="">
+                <li>[Mobile] Swipe the cells ⬆ ➡ ⬇ ⬅ with your finger to move</li>
+                <li>[Desktop] Drag and drop cells ⬆ ➡ ⬇ ⬅ to move</li>
+                <li>Match 3, 4, 5 similar cells to make them dissapear</li>
+                <li>One matched cell is worth 1 score</li>
+                <li>Try to match as much cell as possible in 60 seconds</li>
+            </ul>
+        </div>
     </div>
-    <div class="timer-container">
-      <h3>time</h3>
-      <p id="timer">60</p>
-    </div>
-  </div>
-  <div class="grid"></div>
-  <a href="sixtwenty-achu">test voice</a>
-  <footer class="footer">
-    <p>Made with Chaya, kadi and sneham. By <a href="https://github.com/arjc">Arjun</a></p>
-  </footer>
-  <script>
-    const candyColors = [
-      "url(malayalam/sprite/bharat.jpg)",
-      "url(malayalam/sprite/lal.png)",
-      "url(malayalam/sprite/lalu.jpg)",
-      "url(malayalam/sprite/mohanlal.png)",
-      "url(malayalam/sprite/raju.jpg)",
-      "url(malayalam/sprite/thangan.png)",
-
-    ];
-
-    // Audio files for each candy type
-    const candySounds = {
-      0: "malayalam/audio/bharat.m4a",
-      1: "malayalam/audio/lal.m4a",
-      2: "malayalam/audio/lalu.m4a",
-      3: "malayalam/audio/mohanlal.mp3",
-      4: "malayalam/audio/raju.mp3",
-      5: "malayalam/audio/thangan.m4a",
-    };
-  </script>
-
+    <footer class="footer">
+        <p>Made with chaya, kadi and sneham by <a href="https://github.com/arjc">Arjun</a></p>
+    </footer>
 </body>
 
 </html>

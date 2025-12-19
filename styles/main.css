@@ -1,3 +1,7 @@
+a{
+  color: #fff;
+  font-weight: 900;
+}
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -115,6 +119,8 @@ body {
   gap: 8px;
   overflow-x: hidden;
   font-family: monospace;
+  height: 100vh;
+  width: 100vw;
 }
 
 .scoreBoard {
@@ -267,8 +273,8 @@ body {
 
 .footer {
   width: 100%;
-  background: #ffffff88;
-  color: #000;
+  background: #00000088;
+  color: #ffffff;
   text-align: center;
   padding: 15px;
   font-size: clamp(0.75rem, 2vw, 1rem);
@@ -278,5 +284,5 @@ body {
 
 .footer p {
   margin: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: monospace;
 }
