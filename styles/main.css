@@ -1,64 +1,44 @@
-a{
-  color: #fff;
-  font-weight: 900;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  width: min(90vw, 560px);
-  height: min(90vw, 560px);
-  aspect-ratio: 1;
-  margin: 10px auto;
-  background-color: rgba(109, 127, 151, 0.5);
-  padding: 4px;
-  gap: 0;
-  color: #85796b;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
-  border-radius: 5px;
-}
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
 
-.grid div {
-  width: 100%;
-  height: 100%;
-  border-radius: 10%;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  border: solid 1px #000;
-  background-size: cover;
-  background-position: center;
-  -webkit-user-select: none;
-  user-select: none;
-  -webkit-touch-callout: none;
 }
 
-.grid div:active {
-  box-sizing: border-box;
-  border: solid 2px #0f0;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  font-family: monospace;
+  height: 100vh;
+  width: 100vw;
 }
 
-.grid div:hover {
-  cursor: crosshair;
-
-}
-
-@media (hover: none) {
-  .grid div:hover {
-    cursor: pointer;
-  }
-}
-
-h3 {
-  text-transform: uppercase;
-}
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
 
 h1 {
   text-transform: uppercase;
   margin-top: -10px;
 }
 
-.invisible {
-  background-color: white;
+h3 {
+  text-transform: uppercase;
 }
+
+a {
+  color: #fff;
+  font-weight: 900;
+}
+
+/* ===================================
+   ANIMATIONS & KEYFRAMES
+   =================================== */
 
 @keyframes flicker {
 
@@ -80,48 +60,84 @@ h1 {
   }
 }
 
-.matched {
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ===================================
+   UNIVERSAL
+   =================================== 
+*/
+.not-available {
+  cursor: not-allowed !important;
+  opacity: 75%;
+  filter: grayscale(100%);
+}
+
+
+/* ===================================
+   GAME GRID
+   =================================== 
+*/
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: min(90vw, 560px);
+  height: min(90vw, 560px);
+  aspect-ratio: 1;
+  margin: 10px auto;
+  background-color: rgba(109, 127, 151, 0.5);
+  padding: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+  border-radius: 5px;
+}
+
+.grid div {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  box-sizing: border-box;
+  border: solid 1px #000;
+  background-size: cover;
+  background-position: center;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.grid div:hover {
+  cursor: crosshair;
+}
+
+.grid div:active {
+  box-sizing: border-box;
+  border: solid 2px #0f0;
+}
+
+.grid div.matched {
   animation: flicker 0.6s ease-in-out;
 }
 
-.title {
-  background: #ffffff88;
-  border: solid 5px #000;
-  padding: 15px;
-  border-radius: 25px;
-  color: #000;
-  font-size: 2em;
-  margin: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+@media (hover: none) {
+  .grid div:hover {
+    cursor: pointer;
+  }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-  overflow-x: hidden;
-  font-family: monospace;
-  height: 100vh;
-  width: 100vw;
-}
+/* ===================================
+   SCOREBOARD & TIMER
+   =================================== 
+*/
 
 .scoreBoard {
   color: #000;
@@ -162,16 +178,6 @@ body {
   color: #000;
 }
 
-.timer-container {
-  text-align: center;
-}
-
-.timer-container h3 {
-  font-size: clamp(0.8rem, 2vw, 1.2rem);
-  margin-bottom: 4px;
-  font-weight: 400;
-}
-
 #timer {
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   color: #ff6b6b;
@@ -184,13 +190,25 @@ body {
   animation: blink 0.5s infinite;
 }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+/* ===================================
+   START MENU & BUTTONS
+   =================================== */
+.homeBtn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 999999;
+  border: solid 2px #fff;
+  color: white;
+  background: #32323288;
+  padding: 10px 15px;
+  border-radius: 5px;
+  letter-spacing: 0.5ch;
+  transition: all 250ms ease;
+}
+.homeBtn:hover {
+  transform: scale(1.05);
+  letter-spacing: 0.6ch;
 }
 
 .start {
@@ -201,6 +219,8 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
+  flex-direction: column;
+  gap: 10vw;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -225,50 +245,26 @@ body {
   min-width: 44px;
 }
 
+.baby:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
 @media (hover: hover) {
   .baby:hover {
     transform: scale(1.05);
   }
 }
 
-.baby:active {
-  transform: scale(0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
+/* ===================================
+   LAYOUT COMPONENTS
+   =================================== */
 
-@media (max-width: 600px) {
-  body {
-    padding: 6px;
-    gap: 6px;
-  }
-
-  .grid {
-    margin: 0;
-  }
-
-  .scoreBoard {
-    padding: 10px;
-  }
-
-  .start {
-    z-index: 9999;
-  }
-}
-
-@media (max-height: 600px) {
-  body {
-    justify-content: center;
-  }
-}
-
-@media (orientation: landscape) and (max-height: 500px) {
-  .scoreBoard {
-    padding: 8px;
-  }
-
-  .grid {
-    margin: 4px auto;
-  }
+.jibesh-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .footer {
@@ -285,4 +281,43 @@ body {
 .footer p {
   margin: 0;
   font-family: monospace;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 600px) {
+  .grid {
+    margin: 1vh 0;
+   }
+
+  .scoreBoard {
+    margin: 10vh 0 0 0;
+    padding: 10px;
+  }
+
+  .start {
+    z-index: 9999;
+  }
+
+  .inst-desk {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .inst-mob {
+    display: none;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .scoreBoard {
+    padding: 8px;
+  }
+
+  .grid {
+    margin: 4px auto;
+  }
 }
