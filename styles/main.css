@@ -194,7 +194,7 @@ a {
    START MENU & BUTTONS
    =================================== */
 .homeBtn {
-  position: absolute;
+  position: fixed;
   top: 10px;
   left: 10px;
   z-index: 999999;
