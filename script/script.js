@@ -325,7 +325,7 @@ function suraSugarBlast() {
     }
 
     function checkColumnForFour() {
-        for (let i = 0; i < 39; i++) {
+        for (let i = 0; i < 40; i++) {
             const matches = [i, i + width, i + width * 2, i + width * 3];
             const decidedColor = squares[i].style.backgroundImage;
             if (decidedColor !== "" && matches.every(idx => squares[idx].style.backgroundImage === decidedColor)) {
@@ -348,7 +348,7 @@ function suraSugarBlast() {
     }
 
     function checkColumnForThree() {
-        for (let i = 0; i < 47; i++) {
+        for (let i = 0; i < 48; i++) {
             const matches = [i, i + width, i + width * 2];
             const decidedColor = squares[i].style.backgroundImage;
             if (decidedColor !== "" && matches.every(idx => squares[idx].style.backgroundImage === decidedColor)) {

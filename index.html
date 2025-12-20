@@ -7,6 +7,15 @@
     <title>Line cut - Match 3</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/home.css">
+    <script>
+        // ===== EVENT DATE CONFIGURATION =====
+        // months are 0-indexed (0 = January, 11 = December)
+        const EVENT_DATE = new Date(2025, 11, 25); // Christmas
+        // const EVENT_DATE = new Date(2026, 9, 31); // Halloween
+        // const EVENT_DATE = new Date(2026, 0, 1); // NY
+        
+
+    </script>
 </head>
 
 <body>
@@ -17,6 +26,14 @@
     </div>
     <!-- <h1 onclick="window.open('https://forms.gle/3Z3QJ1XwNyZouumQ6')">NEW LINE CUT +</h1> -->
     <div class="cards-container">
+        <div class="jibesh-card" style="background: linear-gradient(270deg, #ff000074, #ffffff74);" onclick="window.location = 'Christmas'">
+            <img src="christmas/bg.gif" alt="six twenty">
+            <div>
+                <h1>Holiday Special</h1>
+                <p class="time-left"></p>
+                <p>play now ➡</p>
+            </div>
+        </div>
         <div class="jibesh-card" onclick="window.location = 'malayalam2'">
             <img src="malayalam2/bg.gif" alt="six twenty">
             <div>
@@ -105,6 +122,30 @@
     <footer class="footer">
         <p>Made with chaya, kadi and sneham by <a href="https://github.com/arjc">Arjun</a></p>
     </footer>
+
+    <script>
+        // Countdown Timer Function
+        function updateCountdown() {
+            const now = new Date();
+            const timeRemaining = EVENT_DATE - now;
+
+            if (timeRemaining <= 0) {
+                document.querySelector('.time-left').textContent = 'Event is here! 🎉';
+                return;
+            }
+
+            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+            document.querySelector('.time-left').textContent = `${days}d ${hours}h ${minutes}m ${seconds}s left`;
+        }
+
+        // Update countdown immediately and then every second
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
 </body>
 
 </html>
