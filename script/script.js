@@ -1,7 +1,14 @@
+document.addEventListener("DOMContentLoaded", () => {
+    favIkkaOnPewer(candyColors[Math.floor(Math.random() * candyColors.length)]);
+});
 
-document.getElementById('favicon').setAttribute('href','sprite.png');
+function favIkkaOnPewer(favImg) {
+    let setFavicon = document.createElement('link');
+    setFavicon.setAttribute('rel', 'shortcut icon');
+    setFavicon.setAttribute('href', favImg);
+    document.querySelector('head').appendChild(setFavicon);
+}
 
-document.addEventListener("DOMContentLoaded", () => { });
 
 function jibesh() {
     document.querySelector(".start").style.display = "none";
@@ -32,7 +39,7 @@ function suraSugarBlast() {
         } catch (e) { }
     }
 
-    function triggerVibration() {navigator.vibrate?.(50);}
+    function triggerVibration() { navigator.vibrate?.(50); }
 
     const matchedElements = new Set();
     let isGameBusy = false;
@@ -287,8 +294,8 @@ function suraSugarBlast() {
     const checkColFunc = checkMatches(3);
 
     function checkRowForFive() {
-        const notValid = [4, 5, 6, 7, 12, 13, 14, 15, 20, 21, 22, 23, 28, 29, 
-            30, 31, 36, 37, 38, 39, 44, 45, 46, 47, 52, 
+        const notValid = [4, 5, 6, 7, 12, 13, 14, 15, 20, 21, 22, 23, 28, 29,
+            30, 31, 36, 37, 38, 39, 44, 45, 46, 47, 52,
             53, 54, 55, 60, 61, 62, 63];
         for (let i = 0; i < 60; i++) {
             if (notValid.includes(i)) continue;
@@ -357,6 +364,118 @@ function suraSugarBlast() {
         }
     }
 
+    // let isSnowing = true;
+    // ==================== SNOW ====================
+
+    // function initSnowEffect() {
+    //     const canvas = document.createElement('canvas');
+    //     canvas.id = 'snowCanvas';
+    //     canvas.style.position = 'fixed';
+    //     canvas.style.top = '0';
+    //     canvas.style.left = '0';
+    //     canvas.style.width = '100%';
+    //     canvas.style.height = '100%';
+    //     canvas.style.pointerEvents = 'none';
+    //     canvas.style.zIndex = '99999';
+    //     document.body.appendChild(canvas);
+
+    //     const ctx = canvas.getContext('2d');
+    //     let snowflakes = [];
+    //     let animationId;
+
+    //     function resizeCanvas() {
+    //         canvas.width = window.innerWidth;
+    //         canvas.height = window.innerHeight;
+    //     }
+
+    //     class Snowflake {
+    //         constructor() {
+    //             this.x = Math.random() * canvas.width;
+    //             this.y = Math.random() * canvas.height - canvas.height;
+    //             this.radius = Math.random() * 3 + 1;
+    //             this.speed = Math.random() * 1 + 0.5;
+    //             this.wind = Math.random() * 0.5 - 0.25;
+    //             this.opacity = Math.random() * 0.6 + 0.4;
+    //         }
+
+    //         update() {
+    //             this.y += this.speed;
+    //             this.x += this.wind;
+
+    //             if (this.y > canvas.height) {
+    //                 this.y = -10;
+    //                 this.x = Math.random() * canvas.width;
+    //             }
+
+    //             if (this.x > canvas.width) {
+    //                 this.x = 0;
+    //             } else if (this.x < 0) {
+    //                 this.x = canvas.width;
+    //             }
+    //         }
+
+    //         draw() {
+    //             ctx.beginPath();
+    //             ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    //             ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+    //             // ctx.fillStyle = `#fff`;
+    //             ctx.fill();
+    //             ctx.closePath();
+    //         }
+    //     }
+
+    //     function createSnowflakes() {
+    //         const numberOfFlakes = Math.floor((canvas.width * canvas.height) / 8000);
+    //         snowflakes = [];
+    //         for (let i = 0; i < numberOfFlakes; i++) {
+    //             snowflakes.push(new Snowflake());
+    //         }
+    //     }
+
+    //     function animate() {
+    //         if (!isSnowing) {
+    //             ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //             return;
+    //         }
+
+    //         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    //         snowflakes.forEach(flake => {
+    //             flake.update();
+    //             flake.draw();
+    //         });
+
+    //         animationId = requestAnimationFrame(animate);
+    //     }
+
+    //     resizeCanvas();
+    //     createSnowflakes();
+    //     animate();
+
+    //     window.addEventListener('resize', () => {
+    //         resizeCanvas();
+    //         createSnowflakes();
+    //     });
+
+    //     const checkSnowStatus = setInterval(() => {
+    //         if (isSnowing && !animationId) {
+    //             animate();
+    //         } else if (!isSnowing && animationId) {
+    //             cancelAnimationFrame(animationId);
+    //             animationId = null;
+    //             ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //         }
+    //     }, 100);
+    // }
+
+    // // Initialize snow effect when DOM is ready
+    // if (document.readyState === 'loading') {
+    //     document.addEventListener('DOMContentLoaded', initSnowEffect);
+    // } else {
+    //     initSnowEffect();
+    // }
+    // ==================== END SNOW EFFECT ====================
+
     // GL =====================================================================
     setInterval(() => {
         // 5
@@ -369,5 +488,8 @@ function suraSugarBlast() {
         checkRowForThree();
         checkColumnForThree();
         moveIntoSquareBelow();
+
+
     }, 250);
 }
+

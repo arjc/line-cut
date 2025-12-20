@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Line cut - Match 3</title>
+    <link rel="favicon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/home.css">
     <script>
@@ -130,7 +131,7 @@
             const timeRemaining = EVENT_DATE - now;
 
             if (timeRemaining <= 0) {
-                document.querySelector('.time-left').textContent = 'Event is here! 🎉';
+                document.querySelector('.time-left').textContent = '(Limited Time Eddition)';
                 return;
             }
 
