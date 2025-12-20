@@ -1,3 +1,6 @@
+
+document.getElementById('favicon').setAttribute('href','sprite.png');
+
 document.addEventListener("DOMContentLoaded", () => { });
 
 function jibesh() {
@@ -85,7 +88,7 @@ function suraSugarBlast() {
             square.setAttribute("draggable", true);
             square.setAttribute("id", i);
             let randomColor = Math.floor(Math.random() * candyColors.length);
-            square.style.backgroundImage = candyColors[randomColor];
+            square.style.backgroundImage = `url(${candyColors[randomColor]})`;
             square.setAttribute("data-color", randomColor);
             grid.appendChild(square);
             squares.push(square);
@@ -201,34 +204,36 @@ function suraSugarBlast() {
 
     function moveIntoSquareBelow() {
         for (let col = 0; col < width; col++) {
-            const items = [];
-            for (let row = 0; row < width; row++) {
-                const index = row * width + col;
-                if (squares[index].style.backgroundImage !== "") {
-                    items.push({
-                        image: squares[index].style.backgroundImage,
-                        color: squares[index].getAttribute("data-color")
-                    });
+            setTimeout(() => {
+                const items = [];
+                for (let row = 0; row < width; row++) {
+                    const index = row * width + col;
+                    if (squares[index].style.backgroundImage !== "") {
+                        items.push({
+                            image: squares[index].style.backgroundImage,
+                            color: squares[index].getAttribute("data-color")
+                        });
+                    }
                 }
-            }
-            for (let row = 0; row < width; row++) {
-                const index = row * width + col;
-                squares[index].style.backgroundImage = "";
-                squares[index].setAttribute("data-color", "");
-            }
-            let fillIndex = width - 1;
-            for (let i = items.length - 1; i >= 0; i--) {
-                const index = fillIndex * width + col;
-                squares[index].style.backgroundImage = items[i].image;
-                squares[index].setAttribute("data-color", items[i].color);
-                fillIndex--;
-            }
-            for (let row = 0; row < fillIndex + 1; row++) {
-                const index = row * width + col;
-                let randomColor = Math.floor(Math.random() * candyColors.length);
-                squares[index].style.backgroundImage = candyColors[randomColor];
-                squares[index].setAttribute("data-color", randomColor);
-            }
+                for (let row = 0; row < width; row++) {
+                    const index = row * width + col;
+                    squares[index].style.backgroundImage = "";
+                    squares[index].setAttribute("data-color", "");
+                }
+                let fillIndex = width - 1;
+                for (let i = items.length - 1; i >= 0; i--) {
+                    const index = fillIndex * width + col;
+                    squares[index].style.backgroundImage = items[i].image;
+                    squares[index].setAttribute("data-color", items[i].color);
+                    fillIndex--;
+                }
+                for (let row = 0; row < fillIndex + 1; row++) {
+                    const index = row * width + col;
+                    let randomColor = Math.floor(Math.random() * candyColors.length);
+                    squares[index].style.backgroundImage = `url(${candyColors[randomColor]})`;
+                    squares[index].setAttribute("data-color", randomColor);
+                }
+            }, col * 50);
         }
     }
 
