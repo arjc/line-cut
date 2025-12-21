@@ -1,6 +1,6 @@
 # Custom Match 3 Game [Play Now](https://arjc.github.io/line-cut)
 
-# Like cut - a match 3 game
+# [Line cut - a match 3 game]
 ## how to play
 Play as per the instructions provided on the game screen 
 
