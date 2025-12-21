@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Line cut - Match 3</title>
-    <link rel="favicon" href="favicon.ico" type="image/x-icon">
+    <!-- <link rel="favicon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/home.css">
     <script>
-        // ===== EVENT DATE CONFIGURATION =====
         // months are 0-indexed (0 = January, 11 = December)
-        const EVENT_DATE = new Date(2025, 11, 25); // Christmas
         // const EVENT_DATE = new Date(2026, 9, 31); // Halloween
-        // const EVENT_DATE = new Date(2026, 0, 1); // NY
-        
+        const EVENT_DATE = new Date(2025, 11, 31); // CH 31
+        // const EVENT_DATE = new Date(2026, 0, 10); // NY 10
+
 
     </script>
 </head>
@@ -27,7 +26,8 @@
     </div>
     <!-- <h1 onclick="window.open('https://forms.gle/3Z3QJ1XwNyZouumQ6')">NEW LINE CUT +</h1> -->
     <div class="cards-container">
-        <div class="jibesh-card" style="background: linear-gradient(270deg, #ff000074, #ffffff74);" onclick="window.location = 'christmas'">
+        <div class="jibesh-card" style="background: linear-gradient(270deg, #ff000074, #ffffff74);"
+            onclick="window.location = 'christmas'">
             <img src="christmas/bg.gif" alt="six twenty">
             <div>
                 <h1>Holiday Special</h1>
@@ -94,7 +94,7 @@
                 <p>Make a new theme</p>
             </div>
         </div>
-        
+
     </div>
     <div class="disclaimer">
         ⚠ DISCLAIMER ⚠
@@ -125,13 +125,17 @@
     </footer>
 
     <script>
+        candyColours = [
+            'favicon.ico'
+        ]
+
         // Countdown Timer Function
         function updateCountdown() {
             const now = new Date();
             const timeRemaining = EVENT_DATE - now;
 
             if (timeRemaining <= 0) {
-                document.querySelector('.time-left').textContent = '(Limited Time Eddition)';
+                document.querySelector('.time-left').textContent = 'PLAY NOW (LIMITED TIME LEFT)';
                 return;
             }
 
