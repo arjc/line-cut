@@ -12,8 +12,8 @@ Like flappy creator I wanted users to create new skin/version of the game where 
 
 ## How I made line cut
 Line-cut is made purely using javascript.
-I used [codewithfaraz's candy crush clone](https://www.codewithfaraz.com/content/294/creating-a-candy-crush-clone-html-css-and-javascript-tutorial-source-code) made using js, css and html. 
-I editted the assets and made some changes, introduced new game mechanics like:
+I got inspired by [codewithfaraz's candy crush clone](https://www.codewithfaraz.com/content/294/creating-a-candy-crush-clone-html-css-and-javascript-tutorial-source-code) which was made using js, css and html. 
+I built line-cut on top of this code as base, and introduced new game mechanics like:
 - Match 5 lines
 - pop animation
 - play sound on pop
@@ -22,16 +22,16 @@ I editted the assets and made some changes, introduced new game mechanics like:
 - score saving feature
 
 With this code as my foundation I started working on design and layout. With a homepage and a way to introduce new skins to the project
-Overall, I learnt quite a lot of things and learn by starting this project, and enjoy every single part of making it what it is...
+Overall, I learnt quite a lot of things and learn by starting this project, and enjoy every single part of making "it" what it is...
 
 ## Skins
 - malayalam 
 - malayalm 2
 - breaking bad
-- malayalam pop
-- gen alpha brainrot 
-- goofy animals
 - Holiday special (limited time)
+- malayalam pop [WIP]
+- gen alpha brainrot [WIP]
+- goofy animals [WIP]
 
 ## Add your skin
 I plan on adding more skins. If you have any socially relevant skins you can publish the assets to: my [Google form](https://docs.google.com/forms/d/e/1FAIpQLSciDnYp1TGabS4l23OnY19FEFb97OHeiSDXeh-UZ4NOf98mBg/viewform). If it's good then I'll add it to line-cut homepage with your name displayed.
