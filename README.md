@@ -1,4 +1,4 @@
-# Custom Match 3 Game [Play Now](https://arjc.github.io/line-cut)
+# Custom Match 3 Game [Play Now](https://arjc.github.io/linecut/)
 
 # [Line cut - a match 3 game]
 ![Christmas theme line cut match 3](https://github.com/arjc/line-cut/blob/main/thumb-git.png)
